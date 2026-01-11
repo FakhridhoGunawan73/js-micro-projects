@@ -1,21 +1,19 @@
-// buat button dengan default off,lalu kita memerlukan variable untuk menyimpan
-// nilai true dan false,lalu buat DOM untuk dan connectkan ke evenlistenner
-// lalu tambahkan function untuk conditional untuk mengaktifkan dan menonaktifkan
-// saklarnya
+// ketika ingin membuat click counter,pertama kita memerlukan variable 
+// untuk menampung value,lalu setalah itu untuk menambahkan value,
+// memerlukan button click untuk ketika button di click value yang ada 
+// di html nya bertambah,agar tombol buttonnya bisa berfungsi,connect
+// evenlistenner,setelah itu agar evenlistennernya ketika di klik
+// valuenya bertambah,buat function untuk menambahkan value,setelah 
+// berhasil,sekarang tampilkan displaynya dengan membuat <p> dan menambahkan DOM nya
 
-let x = false;
+let counter = 0;
 
-const buttonSaklar = document.getElementById('saklar')
+const buttonClick = document.getElementById('click-button')
+const textDisplay = document.getElementById('text-display')
 
-function toggleButton() {
-    if (x === false) {
-        x = true;
-        buttonSaklar.textContent = "ON"
-    } else {
-        x = false;
-        buttonSaklar.textContent = "OFF"
-    }
-
+function clickCounter() {
+    counter++
+    textDisplay.textContent = `Jumlah Click = ${counter}`
 }
 
-buttonSaklar.addEventListener('click', toggleButton)
+buttonClick.addEventListener('click', clickCounter);
