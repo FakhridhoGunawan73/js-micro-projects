@@ -1,19 +1,27 @@
-// ketika ingin membuat click counter,pertama kita memerlukan variable 
-// untuk menampung value,lalu setalah itu untuk menambahkan value,
-// memerlukan button click untuk ketika button di click value yang ada 
-// di html nya bertambah,agar tombol buttonnya bisa berfungsi,connect
-// evenlistenner,setelah itu agar evenlistennernya ketika di klik
-// valuenya bertambah,buat function untuk menambahkan value,setelah 
-// berhasil,sekarang tampilkan displaynya dengan membuat <p> dan menambahkan DOM nya
+// untuk membuat reset counter,hal yang perlu dilakukan terlebih dahulu
+// buat variable untuk menyimpan value yang akan di reset,lalu buat button
+// yang berfungsi untuk menambhakan value,setelah itu tambahkan evenlistenner
+// yang di connectkan dengan button,agar ketika di klik valuenya bertambah
+// buat function untuk evenlistenner yang mana function tersebut untuk menambahkan
+// value ketika button click me di click,lalu tampilkan display menggunakan <p>
+// lalu tambahkan button reset,lalu tambahkan dan connectkan variable reset menggunakan
+// evenlistenner,lalu buat function untuk mereset value yang sudah di click
 
 let counter = 0;
 
-const buttonClick = document.getElementById('click-button')
+const clickButton = document.getElementById('click-button')
 const textDisplay = document.getElementById('text-display')
+const resetButton = document.getElementById('reset-button')
 
 function clickCounter() {
     counter++
     textDisplay.textContent = `Jumlah Click = ${counter}`
 }
 
-buttonClick.addEventListener('click', clickCounter);
+function resetCounter() {
+    counter = 0;
+    textDisplay.textContent = `Jumlah Click = ${counter}`
+}
+
+clickButton.addEventListener('click', clickCounter);
+resetButton.addEventListener('click', resetCounter)
